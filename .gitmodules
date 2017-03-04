@@ -1,0 +1,3 @@
+[submodule "tools/raml2html"]
+	path = tools/raml2html
+	url = https://github.com/kevinrenskers/raml2html.git
