@@ -82,17 +82,17 @@ traits:
       description: "添加集群"
       queryParameters:
           nodes:
-            type: file
+            type: string
             description: 集群中所有的节点信息
             example: !include samples/node_info_model.sample
             required: true
           cluster:
-            type: boolean
+            type: string
             description: 集群的基本信息
             example: !include samples/cluster_info_model.sample
             required: true
           switches:
-            type: file
+            type: string
             description: 交换机信息
             example: |
                  [{
@@ -114,13 +114,13 @@ traits:
       description: 查询交换机的guid、端口数量
       queryParameters:
           switchs:
-            type: file
+            type: string
             description: 交换机ip
             example: |
                 ["10.10.90.241"]
             required: true
           nodes:
-            type: file
+            type: string
             description: 当前集群下所有节点的信息
             example: |
                 [

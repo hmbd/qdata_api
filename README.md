@@ -13,7 +13,10 @@
 ## type类型
 
 ```
-integer
-number
 string
+number
+integer
+date
+boolean # 数组
+file　# 列表
 ```
