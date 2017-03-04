@@ -179,29 +179,29 @@
     }],
    "message": ""
 }
-</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="clusters_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/clusters</h4></div><div class="modal-body"><div class="alert alert-info"><p>添加集群</p></div><ul class="nav nav-tabs"><li class="active"><a href="#clusters_post_request" data-toggle="tab">Request</a></li><li><a href="#clusters_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="clusters_post_request"><h3>Query Parameters</h3><ul><li><strong>nodes</strong>: <em>required (string)</em><p>集群中所有的节点信息</p><p><strong>Example</strong>:</p><pre>    [{
-        "ip": "",
-        "hostname": "qdata-com46-dev",
-        "node_type": "compute",
-        "username": "",
-        "password": "",
-        "ibcard_ip": [],
-        "uuid": "48b843a282ef49aa8042718ac36ca6c7",
-        "port": 22,
-        "ipmi": "10.10.20.146",
-        "pwd_type": 1,
-        "ipmiuser": "",
-        "ipmipwd": ""
-    }]</pre></li><li><strong>cluster</strong>: <em>required (string)</em><p>集群的基本信息</p><p><strong>Example</strong>:</p><pre>    {
-        "name": "qdata-5.0.0",
-        "description": "test",
-        "type": "Three-tier",
-        "uuid": "48b843a282ef49aa8042718ac36ca6c7",
-        "position": "滨江机房",
-        "room": "1104室",
-        "channel": "A通道",
-        "rack": "F机柜"
-    }</pre></li><li><strong>switches</strong>: <em>required (string)</em><p>交换机信息</p><p><strong>Example</strong>:</p><pre>[{
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="clusters_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/clusters</h4></div><div class="modal-body"><div class="alert alert-info"><p>添加集群</p></div><ul class="nav nav-tabs"><li class="active"><a href="#clusters_post_request" data-toggle="tab">Request</a></li><li><a href="#clusters_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="clusters_post_request"><h3>Query Parameters</h3><ul><li><strong>nodes</strong>: <em>required (string)</em><p>集群中所有的节点信息</p><p><strong>Example</strong>:</p><pre>[{
+    "ip": "",
+    "hostname": "qdata-com46-dev",
+    "node_type": "compute",
+    "username": "",
+    "password": "",
+    "ibcard_ip": [],
+    "uuid": "48b843a282ef49aa8042718ac36ca6c7",
+    "port": 22,
+    "ipmi": "10.10.20.146",
+    "pwd_type": 1,
+    "ipmiuser": "",
+    "ipmipwd": ""
+}]</pre></li><li><strong>cluster</strong>: <em>required (string)</em><p>集群的基本信息</p><p><strong>Example</strong>:</p><pre>{
+    "name": "qdata-5.0.0",
+    "description": "test",
+    "type": "Three-tier",
+    "uuid": "48b843a282ef49aa8042718ac36ca6c7",
+    "position": "滨江机房",
+    "room": "1104室",
+    "channel": "A通道",
+    "rack": "F机柜"
+}</pre></li><li><strong>switches</strong>: <em>required (string)</em><p>交换机信息</p><p><strong>Example</strong>:</p><pre>[{
    "ip": "10.10.90.241",
    "guid": "7CFE900300ECF6C0",
    "port_count": "36"
@@ -245,7 +245,7 @@
           create_time: "2017-02-10 10:00:00",
           update_time: "2017-02-10 14:00:00",
         }
-     }</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="switches" class="panel-title">交换机</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_switches_find"><span class="parent">/switches</span>/find</a> <span class="methods"><a href="#switches_find_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_switches_find" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#switches_find_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>查询交换机的guid、端口数量</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="switches_find_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/switches</span>/find</h4></div><div class="modal-body"><div class="alert alert-info"><p>查询交换机的guid、端口数量</p></div><ul class="nav nav-tabs"><li class="active"><a href="#switches_find_post_request" data-toggle="tab">Request</a></li><li><a href="#switches_find_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="switches_find_post_request"><h3>Query Parameters</h3><ul><li><strong>switchs</strong>: <em>required (string)</em><p>交换机ip</p><p><strong>Example</strong>:</p><pre>["10.10.90.241"]
+     }</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="switches" class="panel-title">交换机</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_switches_find"><span class="parent">/switches</span>/find</a> <span class="methods"><a href="#switches_find_post"><span class="badge badge_post">post</span></a> <a href="#switches_find_delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_switches_find" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#switches_find_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>查询交换机的guid、端口数量</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#switches_find_delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>测试</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="switches_find_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/switches</span>/find</h4></div><div class="modal-body"><div class="alert alert-info"><p>查询交换机的guid、端口数量</p></div><ul class="nav nav-tabs"><li class="active"><a href="#switches_find_post_request" data-toggle="tab">Request</a></li><li><a href="#switches_find_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="switches_find_post_request"><h3>Query Parameters</h3><ul><li><strong>switchs</strong>: <em>required (string)</em><p>交换机ip</p><p><strong>Example</strong>:</p><pre>["10.10.90.241"]
 </pre></li><li><strong>nodes</strong>: <em>required (string)</em><p>当前集群下所有节点的信息</p><p><strong>Example</strong>:</p><pre>[
     {
         "ip": "10.10.20.46",
@@ -263,5 +263,28 @@
       "guid": "",
       "port_count": ""
   }]
+}
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="switches_find_delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/switches</span>/find</h4></div><div class="modal-body"><div class="alert alert-info"><p>测试</p></div><ul class="nav nav-tabs"><li class="active"><a href="#switches_find_delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="switches_find_delete_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "id": "http://jsonschema.net",
+    "required": true,
+    "properties": {
+      "songTitle": {
+        "type": "string",
+        "required": true
+      },
+      "albumId": {
+        "type": "string",
+        "required": true,
+        "minLength": 36,
+        "maxLength": 36
+      }
+    }
+}</code></pre><p><strong>Example</strong>:</p><pre><code>example: |
+{
+  "songId": "550e8400-e29b-41d4-a716-446655440000",
+  "songTitle": "Get Lucky",
+  "albumId": "183100e3-0e2b-4404-a716-66104d440550"
 }
 </code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#clusters">集群</a></li><li><a href="#switches">交换机</a></li></ul></div></div></div></div></body></html>

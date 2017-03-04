@@ -87,7 +87,7 @@ traits:
             example: !include samples/node_info_model.sample
             required: true
           cluster:
-            type: object
+            type: string
             description: 集群的基本信息
             example: !include samples/cluster_info_model.sample
             required: true
@@ -146,4 +146,18 @@ traits:
                             "guid": "",
                             "port_count": ""
                         }]
+                      }
+    delete:
+      description: 测试
+      responses:
+            200:
+              body:
+                application/json:
+                  schema: !include schemas/switches_info_schema.schema
+                  example: |
+                      example: |
+                      {
+                        "songId": "550e8400-e29b-41d4-a716-446655440000",
+                        "songTitle": "Get Lucky",
+                        "albumId": "183100e3-0e2b-4404-a716-66104d440550"
                       }
