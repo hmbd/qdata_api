@@ -1,0 +1,14 @@
+[{
+    "ip": "",
+    "hostname": "qdata-com46-dev",
+    "node_type": "compute",
+    "username": "",
+    "password": "",
+    "ibcard_ip": [],
+    "uuid": "48b843a282ef49aa8042718ac36ca6c7",
+    "port": 22,
+    "ipmi": "10.10.20.146",
+    "pwd_type": 1,
+    "ipmiuser": "",
+    "ipmipwd": ""
+}]

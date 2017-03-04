@@ -1,0 +1,10 @@
+{
+    "name": "qdata-5.0.0",
+    "description": "test",
+    "type": "Three-tier",
+    "uuid": "48b843a282ef49aa8042718ac36ca6c7",
+    "position": "滨江机房",
+    "room": "1104室",
+    "channel": "A通道",
+    "rack": "F机柜"
+}

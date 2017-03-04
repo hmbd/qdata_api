@@ -1,0 +1,40 @@
+    {
+        error_code: 0,
+        message: "",
+        data: {
+          id: 1,
+          cluster_name: "T 系列",
+          type: "Three-tier",
+          type_name: "三层架构",
+          description: "描述信息",
+          status: "healthy",
+          location: {
+            position: "滨江机房",
+            room: "1104室",
+            channel: "A通道",
+            rack: "F机架",
+          },
+          monitor: {
+            compute_node: {
+              up: 1,
+              down: 0,
+            },
+            storage_node: {
+              up: 0,
+              down: 1,
+            },
+            ib_switch: {
+              up: 1,
+              down: 1,
+            },
+            ib_switch_data_link: {
+              up: 1,
+              down: 1,
+            },
+          },
+          nodes: [node_model],
+          switches: [switch_base_model],
+          create_time: "2017-02-10 10:00:00",
+          update_time: "2017-02-10 14:00:00",
+        }
+     }
