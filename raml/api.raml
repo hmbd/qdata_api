@@ -15,17 +15,63 @@ documentation:
   - title: 全局返回码
     content: !include doc/qdata-code.md
 
-/clusters:
-  displayName: 集群
-  get:
-      description: "查询所有集群信息"
+traits:
+  # 接口响应中不包含 data 字段
+  respWithoutData:
       responses:
         200:
           body:
             application/json:
-              example: !include samples/simple_cluster_info_model.sample
+              example: |
+                {
+                   "error_code": 0,
+                   "data": "",
+                   "message": ""
+                }
+  # 接口响应中包含 data 字段
+  respWithData:
+      responses:
+        200:
+            body:
+              application/json:
+                example: |
+                   {
+                      "error_code": 0,
+                      "data": <<ResponsesData>>,
+                      "message": ""
+                   }
+  paged:
+      queryParameters:
+        page:
+          type: integer
+          required: false
+        pageSize:
+          type: integer
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "code": 0,
+                  "data": {
+                    "page": 1,
+                    "pageSize": 100,
+                    "totalPage": 1,
+                    "totalRow": 2,
+                    "list": <<exampleList>>
+                  }
+                }
+
+/clusters:
+  displayName: 集群
+  get:
+      description: "查询所有集群信息"
+      is: [respWithData: {ResponsesData: !include samples/simple_cluster_info_model.sample}]
   post:
       description: "添加集群"
+      is: [respWithData: {ResponsesData: !include samples/switches_info_model.sample}]
       queryParameters:
           nodes:
             type: array
@@ -47,17 +93,13 @@ documentation:
                     "port_count": "36"
                  }]
             required: true
-      responses:
-            200:
-              body:
-                application/json:
-                  example: !include samples/switches_info_model.sample
 
 /switches:
   displayName: 交换机
   /find:
     post:
       description: 查询交换机的guid、端口数量
+      is: [respWithData: {ResponsesData: !include samples/node_info_model.sample}]
       queryParameters:
           switchs:
             type: array
@@ -79,20 +121,6 @@ documentation:
                     }
                 ]
             required: true
-      responses:
-            200:
-              body:
-                application/json:
-                  example: |
-                      {
-                        error_code: 0,
-                        message: "",
-                        data: [{
-                            "ip": "",
-                            "guid": "",
-                            "port_count": ""
-                        }]
-                      }
     delete:
       description: 测试
       responses:

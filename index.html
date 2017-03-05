@@ -182,6 +182,8 @@
 }
 </code></pre></li></ol><h3 id="request"><a href="#request">Request</a></h3><p>若请求中没有Request，则代表此次请求不需要传递参数</p><h3><a href="#">全局返回码</a></h3><h5 id="-">每次调用接口时，可以获得正确或错误的返回码，开发者可以根据返回码信息调试接口，排查错误。</h5><h5 id="-">全局返回码说明如下：</h5><table class="table"><thead><tr><th style="text-align:left">返回码</th><th style="text-align:left">提示信息</th><th style="text-align:left">说明</th></tr></thead><tbody><tr><td style="text-align:left">0</td><td style="text-align:left">success</td><td style="text-align:left">成功</td></tr><tr><td style="text-align:left">1001</td><td style="text-align:left">cluster not exits</td><td style="text-align:left">集群不存在</td></tr></tbody></table></div><div class="panel panel-default"><div class="panel-heading"><h3 id="clusters" class="panel-title">集群</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_clusters"><span class="parent"></span>/clusters</a> <span class="methods"><a href="#clusters_get"><span class="badge badge_get">get</span></a> <a href="#clusters_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_clusters" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#clusters_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>查询所有集群信息</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#clusters_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>添加集群</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="clusters_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/clusters</h4></div><div class="modal-body"><div class="alert alert-info"><p>查询所有集群信息</p></div><ul class="nav nav-tabs"><li class="active"><a href="#clusters_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="clusters_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
    "error_code": 0,
+   "data": {
+   "error_code": 0,
    "data": [{
       id: 1,
       cluster_name: "T 系列",
@@ -193,7 +195,10 @@
       create_time: "2017-02-10 10:00:00",
     }],
    "message": ""
-}</code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="clusters_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/clusters</h4></div><div class="modal-body"><div class="alert alert-info"><p>添加集群</p></div><ul class="nav nav-tabs"><li class="active"><a href="#clusters_post_request" data-toggle="tab">Request</a></li><li><a href="#clusters_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="clusters_post_request"><h3>Query Parameters</h3><ul><li><strong>nodes</strong>: <em>required (array of )</em><p>集群中所有的节点信息</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[{
+},
+   "message": ""
+}
+</code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="clusters_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/clusters</h4></div><div class="modal-body"><div class="alert alert-info"><p>添加集群</p></div><ul class="nav nav-tabs"><li class="active"><a href="#clusters_post_request" data-toggle="tab">Request</a></li><li><a href="#clusters_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="clusters_post_request"><h3>Query Parameters</h3><ul><li><strong>nodes</strong>: <em>required (array of )</em><p>集群中所有的节点信息</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[{
     "ip": "",
     "hostname": "qdata-com46-dev",
     "node_type": "compute",
@@ -220,7 +225,9 @@
    "guid": "7CFE900300ECF6C0",
    "port_count": "36"
 }]
-</code></pre></div></li></ul></div><div class="tab-pane" id="clusters_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>    {
+</code></pre></div></li></ul></div><div class="tab-pane" id="clusters_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+   "error_code": 0,
+   "data":     {
         error_code: 0,
         message: "",
         data: {
@@ -259,7 +266,10 @@
           create_time: "2017-02-10 10:00:00",
           update_time: "2017-02-10 14:00:00",
         }
-     }</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="switches" class="panel-title">交换机</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_switches_find"><span class="parent">/switches</span>/find</a> <span class="methods"><a href="#switches_find_post"><span class="badge badge_post">post</span></a> <a href="#switches_find_delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_switches_find" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#switches_find_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>查询交换机的guid、端口数量</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#switches_find_delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>测试</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="switches_find_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/switches</span>/find</h4></div><div class="modal-body"><div class="alert alert-info"><p>查询交换机的guid、端口数量</p></div><ul class="nav nav-tabs"><li class="active"><a href="#switches_find_post_request" data-toggle="tab">Request</a></li><li><a href="#switches_find_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="switches_find_post_request"><h3>Query Parameters</h3><ul><li><strong>switchs</strong>: <em>required (array of )</em><p>交换机ip</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>["10.10.90.241"]
+     },
+   "message": ""
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="switches" class="panel-title">交换机</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_switches_find"><span class="parent">/switches</span>/find</a> <span class="methods"><a href="#switches_find_post"><span class="badge badge_post">post</span></a> <a href="#switches_find_delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_switches_find" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#switches_find_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>查询交换机的guid、端口数量</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#switches_find_delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>测试</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="switches_find_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/switches</span>/find</h4></div><div class="modal-body"><div class="alert alert-info"><p>查询交换机的guid、端口数量</p></div><ul class="nav nav-tabs"><li class="active"><a href="#switches_find_post_request" data-toggle="tab">Request</a></li><li><a href="#switches_find_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="switches_find_post_request"><h3>Query Parameters</h3><ul><li><strong>switchs</strong>: <em>required (array of )</em><p>交换机ip</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>["10.10.90.241"]
 </code></pre></div></li><li><strong>nodes</strong>: <em>required (array of )</em><p>当前集群下所有节点的信息</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>[
     {
         "ip": "10.10.20.46",
@@ -270,13 +280,22 @@
     }
 ]
 </code></pre></div></li></ul></div><div class="tab-pane" id="switches_find_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
-  error_code: 0,
-  message: "",
-  data: [{
-      "ip": "",
-      "guid": "",
-      "port_count": ""
-  }]
+   "error_code": 0,
+   "data": [{
+    "ip": "",
+    "hostname": "qdata-com46-dev",
+    "node_type": "compute",
+    "username": "",
+    "password": "",
+    "ibcard_ip": [],
+    "uuid": "48b843a282ef49aa8042718ac36ca6c7",
+    "port": 22,
+    "ipmi": "10.10.20.146",
+    "pwd_type": 1,
+    "ipmiuser": "",
+    "ipmipwd": ""
+}],
+   "message": ""
 }
 </code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="switches_find_delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/switches</span>/find</h4></div><div class="modal-body"><div class="alert alert-info"><p>测试</p></div><ul class="nav nav-tabs"><li class="active"><a href="#switches_find_delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="switches_find_delete_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>example: |
 {

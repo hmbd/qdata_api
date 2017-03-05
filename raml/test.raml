@@ -1,0 +1,45 @@
+#%RAML 1.0
+title: Products API
+resourceTypes:
+  ReqGet:
+    usage: Use this to describe a resource that lists items
+    get:
+      description: <<getDesc>>
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                   "error_code": 0,
+                   "data": <<ResGetData>>,
+                   "message": ""
+                }
+    post:
+      description: <<postDesc>>
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                   "error_code": 0,
+                   "data": <<ResPostData>>,
+                   "message": ""
+                }
+traits:
+  secured:
+    queryParameters:
+      <<Name>>:
+        description: <<description>>
+        type: <<type>>
+        example: <<example>>
+        required: <<required>>
+/products:
+  displayName: 集群
+  type: { ReqGet: { ResPostData: abc, postDesc: post请求, ResGetData: abc, getDesc: get请求} }
+  get:
+    description: 参数
+    is: [ secured: { Name: access_token, description: test,type: array, example: !include samples/node_info_model.sample, required: true},
+        secured: { Name: token, description: test2,type: object, example: !include samples/cluster_info_model.sample, required: true}  ]
+
