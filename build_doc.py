@@ -83,8 +83,8 @@ if __name__ == '__main__':
         a = a.replace("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/", "static/")
         a = a.replace("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/", "static/")
         # 替换数据类型
-        a = a.replace("boolean", "object")
-        a = a.replace("file", "array")
+        a = a.replace("(boolean)", "(object)")
+        a = a.replace("(file)", "(array)")
         print_ok("静态资源替换成功，开始写入到html中")
         b = open("index.html", "w")
         b.write(a)
